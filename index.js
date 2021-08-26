@@ -15,22 +15,22 @@ const team = [];
 const managerQuestions = [
   {
     type: "input",
-    name: "managerName",
+    name: "name",
     message: "What is the manager's name?",
   },
   {
     type: "input",
-    name: "managerId",
+    name: "id",
     message: "What is the manager's id?",
   },
   {
     type: "input",
-    name: "managerEmail",
+    name: "email",
     message: "What is the manager's email?",
   },
   {
     type: "input",
-    name: "managerOfficeNumber",
+    name: "officenumber",
     message: "What is the manager's office number?",
   },
 ];
@@ -38,22 +38,22 @@ const managerQuestions = [
 const engineerQuestions = [
   {
     type: "input",
-    name: "engineerName",
+    name: "name",
     message: "What is the engineer's name?",
   },
   {
     type: "input",
-    name: "engineerId",
+    name: "id",
     message: "What is the engineer's id?",
   },
   {
     type: "input",
-    name: "engineerEmail",
+    name: "email",
     message: "What is the engineer's email?",
   },
   {
     type: "input",
-    name: "GitHub",
+    name: "github",
     message: "What is the engineer's github?",
   },
 ];
@@ -61,22 +61,22 @@ const engineerQuestions = [
 const internQuestions = [
   {
     type: "input",
-    name: "Name",
+    name: "name",
     message: "What is the intern's name?",
   },
   {
     type: "input",
-    name: "Id",
+    name: "id",
     message: "What is the intern's id?",
   },
   {
     type: "input",
-    name: "Email",
+    name: "email",
     message: "What is the intern's email?",
   },
   {
     type: "input",
-    name: "School",
+    name: "school",
     message: "What is the intern's school?",
   },
 ];

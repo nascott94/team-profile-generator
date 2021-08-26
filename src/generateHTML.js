@@ -2,7 +2,10 @@ const generateCards = (team) => {
   let results = "";
   team.forEach((employee) => {
     results += `<div class="card">
-    
+    <h3>Name: ${employee.name}</h3>
+      <p> ID: ${employee.id}</p>
+        <p>Email: <a>${employee.email}</a></p>
+
     </div>`;
   });
   return results;
@@ -21,7 +24,7 @@ const generateHTML = (team) => {
     <div class = "container">
         <h1>Directory</h1>
         <div>${generateCards(team)}</div>
-    
+
     </div>
 </body>
 </html>`;
