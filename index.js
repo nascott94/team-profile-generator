@@ -90,6 +90,27 @@ const nextQuestion = [
   },
 ];
 
+// function writeToFile(fileName, data) {
+//   fs.writeFile(fileName, data, (err) => {
+//     err ? console.log(err) : console.log("File was written!");
+//   });
+// }
+
+const writeFile = (data) => {
+  fs.writeFile("./dist/index.html", data, (err) => {
+    // if there is an error
+    if (err) {
+      console.log(err);
+      return;
+      // when the profile has been created
+    } else {
+      console.log(
+        "Your team profile has been successfully created! Please check out the index.html"
+      );
+    }
+  });
+};
+
 const askQuestion = (questions) => {
   inquirer.prompt(questions).then((answers) => {
     if (answers.choice) {
@@ -99,9 +120,26 @@ const askQuestion = (questions) => {
         askQuestion(internQuestions);
       } else {
         console.log(team);
+        writeFile(generateHTML(team));
       }
     } else {
-      team.push(answers);
+      let employee;
+      if (answers.github) {
+        employee = new Engineer(
+          answers.id,
+          answers.name,
+          answers.email,
+          answers.github
+        );
+      } else {
+        employee = new Intern(
+          answers.id,
+          answers.name,
+          answers.email,
+          answers.school
+        );
+      }
+      team.push(employee);
       askQuestion(nextQuestion);
     }
   });
@@ -109,7 +147,13 @@ const askQuestion = (questions) => {
 
 const init = () => {
   inquirer.prompt(managerQuestions).then((answers) => {
-    team.push(answers);
+    let employee = new Manager(
+      answers.id,
+      answers.name,
+      answers.email,
+      answers.officenumber
+    );
+    team.push(employee);
     askQuestion(nextQuestion);
   });
 };
