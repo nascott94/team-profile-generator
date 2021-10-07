@@ -1,5 +1,5 @@
 {
-  "name": "Assests",
+  "name": "team-profile-generator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquire": "^0.4.8"
+    "inquirer": "^8.2.0"
   },
   "devDependencies": {
     "jest": "^27.0.6"
